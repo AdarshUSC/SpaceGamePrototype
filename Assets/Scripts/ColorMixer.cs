@@ -8,6 +8,8 @@ public class ColorMixer : MonoBehaviour
     public Button button0;
     public Button button1;
     public Button button2;
+    public Button button3;
+    public Button reset;
 
     public SpriteRenderer mixingArea;
     public SpriteRenderer spaceship;
@@ -34,6 +36,8 @@ public class ColorMixer : MonoBehaviour
         button0.onClick.AddListener(() => OnButtonClick(button0));
         button1.onClick.AddListener(() => OnButtonClick(button1));
         button2.onClick.AddListener(() => OnButtonClick(button2));
+        button3.onClick.AddListener(() => OnButtonClick(button3));
+        reset.onClick.AddListener(OnResetClick);
         Debug.Log(enemyShip.color);
     }
 
@@ -48,15 +52,33 @@ public class ColorMixer : MonoBehaviour
         UpdateOutputColor();
         //clicked.GetComponent<Image>().color *= new Color((float)0.78,(float)0.78,(float)0.78,(float)0.5);            
         
-
+    }
+    private void OnResetClick()
+    {
+        button0.interactable = true;
+        button1.interactable = true;
+        button2.interactable = true;
+        mixingArea.color = new Color(0,0,0,0);
+        colorList.Clear();
+        UpdateOutputColor();
+        
     }
 
     private void UpdateOutputColor()
     {
         Color[] selectedColors = colorList.ToArray();
-        Color resultColor = CombineColors(selectedColors);
+        Color resultColor = new Color(1,1,1,1);
+        if(selectedColors.Length>0){
+            resultColor = CombineColors(selectedColors);
+        }
+            
         mixingArea.color = resultColor;
         spaceship.color = resultColor;
+    }
+    private void Win(){
+        if(spaceship.color.Equals(enemyShip.color)){
+            //enemy pass by without huring player ship.
+        }
     }
 
 }
