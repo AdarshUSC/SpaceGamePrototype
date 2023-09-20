@@ -58,6 +58,7 @@ public class ColorMixer : MonoBehaviour
         button0.interactable = true;
         button1.interactable = true;
         button2.interactable = true;
+        button3.interactable = true;
         mixingArea.color = new Color(0,0,0,0);
         colorList.Clear();
         UpdateOutputColor();
