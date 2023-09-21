@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyMovementDown : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float speed = 25.0f;
+    private float speed = 5.0f;
     void Start()
     {   
         // GameObject bullet = new GameObject.renderer();
