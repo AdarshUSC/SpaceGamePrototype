@@ -17,7 +17,6 @@ public class ColorMixer : MonoBehaviour
     
     //private Color selectedColor1 = GetComponent<Button> ().colors; // Initial color
     private List<Color> colorList = new List<Color>();
-    private bool buttonSelected = false;
     private Color buttonColor;
     public static Color CombineColors(params Color[] aColors)
     {

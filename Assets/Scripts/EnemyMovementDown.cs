@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AlienMovementDown : MonoBehaviour
+public class EnemyMovementDown : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float speed = 5.0f;
+    public float speed = 25.0f;
     void Start()
     {   
-        
+        // GameObject bullet = new GameObject.renderer();
     }
 
     // Update is called once per frame
