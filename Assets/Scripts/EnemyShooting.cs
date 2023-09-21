@@ -33,5 +33,6 @@ public class EnemyShooting : MonoBehaviour
         Instantiate(bullet, firePoint.position, Quaternion.identity);
     }
 
+
    
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyBullet : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class EnemyBullet : MonoBehaviour
 
         if(other.gameObject.CompareTag("Player")){
             Destroy(gameObject);
+            SceneManager.LoadScene("EndScene");
         }
     }
 }

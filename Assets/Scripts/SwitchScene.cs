@@ -11,7 +11,7 @@ public class SwitchScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playButton.onClick.AddListener(PlayGame);
+        // playButton.onClick.AddListener(PlayGame);
     }
 
     // Update is called once per frame
@@ -19,9 +19,9 @@ public class SwitchScene : MonoBehaviour
     {
         
     }
-    private void PlayGame()
+    public void PlayGame()
     {
         // Load the gameplay scene when the play button is clicked.
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("GameScene");
     }
 }
