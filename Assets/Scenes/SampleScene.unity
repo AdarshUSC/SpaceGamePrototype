@@ -939,7 +939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9, g: 0, b: 0.8612037, a: 1}
+  m_Color: {r: 0.9019608, g: 0, b: 0.09803922, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2759,7 +2759,6 @@ MonoBehaviour:
   reset: {fileID: 576479446}
   mixingArea: {fileID: 1109164716}
   spaceship: {fileID: 711290131}
-  enemyShip: {fileID: 2114253771}
 --- !u!4 &2039528709
 Transform:
   m_ObjectHideFlags: 0

@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
     IEnumerator Spawner() {
 
         
-        Color[] colorArr = {new Color(123.0f/255,23.0f/255,44.0f/255,1), new Color(24.0f/255,255.0f/255,10.0f/255,1), new Color(0,0,0,1), new Color(100.0f/255,100.0f/255,100.0f/255,1), new Color(10.0f/255,100.0f/255,10.0f/255,1) };
+        Color[] colorArr = {new Color(115.0f/255,72.0f/255,140.0f/255,1), new Color(237.5f/255,111.0f/255,23.5f/255,1), new Color(0,0,0,1), new Color(55.0f/255,199.0f/255,163.0f/255,1), new Color(10.0f/255,100.0f/255,10.0f/255,1) };
 
         WaitForSeconds wait = new WaitForSeconds(spawnRate);
         

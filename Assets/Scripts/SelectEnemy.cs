@@ -34,6 +34,6 @@ public class SelectEnemy : MonoBehaviour
         enemyColor = renderer.color;
 
         // Use the objectColor as needed.
-        Debug.Log("Prefab color: " + enemyColor);
+        //Debug.Log("Prefab color: " + enemyColor);
     }
 }

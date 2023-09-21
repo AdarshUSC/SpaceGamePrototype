@@ -13,11 +13,11 @@ public class ColorMixer : MonoBehaviour
 
     public SpriteRenderer mixingArea;
     public SpriteRenderer spaceship;
-    public SpriteRenderer enemyShip;
     
     //private Color selectedColor1 = GetComponent<Button> ().colors; // Initial color
     private List<Color> colorList = new List<Color>();
     private Color buttonColor;
+    private Color enemyColor;
     public static Color CombineColors(params Color[] aColors)
     {
         Color result = new Color(0,0,0,0);
@@ -37,10 +37,19 @@ public class ColorMixer : MonoBehaviour
         button2.onClick.AddListener(() => OnButtonClick(button2));
         button3.onClick.AddListener(() => OnButtonClick(button3));
         reset.onClick.AddListener(OnResetClick);
-        Debug.Log(enemyShip.color);
     }
 
-   
+    private void Update()
+    {
+        if(FindObjectOfType<SelectEnemy>()==null)
+        {
+            Debug.Log("enemy not initialized yet");
+        }else
+        {
+            enemyColor = FindObjectOfType<SelectEnemy>().enemyColor;
+            Debug.Log("enemy color is:" + enemyColor);
+        }
+    }
 
     private void OnButtonClick(Button clicked)
     {   
@@ -76,7 +85,8 @@ public class ColorMixer : MonoBehaviour
         spaceship.color = resultColor;
     }
     private void Win(){
-        if(spaceship.color.Equals(enemyShip.color)){
+        if(spaceship.color.Equals(enemyColor)){
+            //this equals might not work as expected due to the color calculation? try use the same way to express color RGB value in this script and emenySpawner.
             //enemy pass by without huring player ship.
         }
     }
