@@ -2759,6 +2759,7 @@ MonoBehaviour:
   reset: {fileID: 576479446}
   mixingArea: {fileID: 1109164716}
   spaceship: {fileID: 711290131}
+  resultColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &2039528709
 Transform:
   m_ObjectHideFlags: 0

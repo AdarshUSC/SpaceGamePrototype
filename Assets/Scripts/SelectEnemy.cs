@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SelectEnemy : MonoBehaviour
 {
@@ -18,22 +19,27 @@ public class SelectEnemy : MonoBehaviour
         if(renderer.isVisible)
         {
             // Perform the selection logic here.
-            Select();
-        }
-    }
-    private void Select()
-    {
-        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
-
-        if (renderer == null)
-        {
-            return;
+            enemyColor = renderer.color;
+            Color mixedColor = FindObjectOfType<ColorMixer>().resultColor;
+            //Debug.Log(mixedColor + "" + enemyColor + "" + mixedColor.Equals(enemyColor));
+            if (!compareColors(enemyColor, mixedColor))
+            {
+                if (transform.position.y <= -5)
+                {
+                    Debug.Log("you lose!");
+                    Application.Quit();
+                }
+            }
         }
         
-        // Get the color property from the material.
-        enemyColor = renderer.color;
-
-        // Use the objectColor as needed.
-        //Debug.Log("Prefab color: " + enemyColor);
+    }
+    private bool compareColors(Color color1,Color color2)
+    {
+        bool match = false;
+        if(Mathf.Abs(color1.r-color2.r)<0.005 & Mathf.Abs(color1.g-color2.g)<0.005 & Mathf.Abs(color1.b - color2.b) < 0.005)
+        {
+            match = true;
+        }
+        return match;
     }
 }

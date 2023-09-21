@@ -13,10 +13,9 @@ public class ColorMixer : MonoBehaviour
 
     public SpriteRenderer mixingArea;
     public SpriteRenderer spaceship;
-    
+    public Color resultColor;
     //private Color selectedColor1 = GetComponent<Button> ().colors; // Initial color
     private List<Color> colorList = new List<Color>();
-    private Color buttonColor;
     private Color enemyColor;
     public static Color CombineColors(params Color[] aColors)
     {
@@ -39,23 +38,23 @@ public class ColorMixer : MonoBehaviour
         reset.onClick.AddListener(OnResetClick);
     }
 
-    private void Update()
-    {
-        if(FindObjectOfType<SelectEnemy>()==null)
-        {
-            Debug.Log("enemy not initialized yet");
-        }else
-        {
-            enemyColor = FindObjectOfType<SelectEnemy>().enemyColor;
-            Debug.Log("enemy color is:" + enemyColor);
-        }
-    }
+    //private void Update()
+    //{
+    //    if(FindObjectOfType<SelectEnemy>()==null)
+    //    {
+    //        Debug.Log("enemy not initialized yet");
+    //    }else
+    //    {
+    //        enemyColor = FindObjectOfType<SelectEnemy>().enemyColor;
+    //        Debug.Log("enemy color is:" + enemyColor);
+    //    }
+    //}
 
     private void OnButtonClick(Button clicked)
     {   
         //buttonSelected = !buttonSelected;
         clicked.interactable = false; //disable the button so player cannot click twice
-        buttonColor = clicked.GetComponent<Image>().color;
+        Color buttonColor = clicked.GetComponent<Image>().color;
         colorList.Add(buttonColor);
         UpdateOutputColor();
         //clicked.GetComponent<Image>().color *= new Color((float)0.78,(float)0.78,(float)0.78,(float)0.5);            
@@ -76,7 +75,7 @@ public class ColorMixer : MonoBehaviour
     private void UpdateOutputColor()
     {
         Color[] selectedColors = colorList.ToArray();
-        Color resultColor = new Color(1,1,1,1);
+        resultColor = new Color(1,1,1,1);
         if(selectedColors.Length>0){
             resultColor = CombineColors(selectedColors);
         }
