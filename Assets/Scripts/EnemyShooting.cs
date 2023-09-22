@@ -24,11 +24,11 @@ public class EnemyShooting : MonoBehaviour
     {
         // float distance = Vector2.Distance(transform.position, player.transform.position);
         // Debug.Log(distance);
-        if(transform.position.y<-0.8f && transform.position.y>-3.5f && !isDectected && !compareColors(GetComponent<SpriteRenderer>().color, player.GetComponent<SpriteRenderer>().color)){
+        if(transform.position.y<-0.8f && transform.position.y>-3.4f && !isDectected && !compareColors(GetComponent<SpriteRenderer>().color, player.GetComponent<SpriteRenderer>().color)){
             Shoot();
             isDectected = true;
         }
-        if (transform.position.y < -3.5f)
+        if (transform.position.y < -3.4f)
         {
             FindObjectOfType<ColorMixer>().OnResetClick();
         }
