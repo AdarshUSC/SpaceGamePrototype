@@ -35,7 +35,7 @@ public class EnemyShooting : MonoBehaviour
         {
             FindObjectOfType<ColorMixer>().OnResetClick();
         }
-        if (firePoint.position.y<-6.0f){
+        if (firePoint.position.y<-5.0f){
             Destroy(this);
         }
     }
