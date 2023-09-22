@@ -60,7 +60,7 @@ public class ColorMixer : MonoBehaviour
         //clicked.GetComponent<Image>().color *= new Color((float)0.78,(float)0.78,(float)0.78,(float)0.5);            
         
     }
-    private void OnResetClick()
+    public void OnResetClick()
     {
         button0.interactable = true;
         button1.interactable = true;
