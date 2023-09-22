@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 public class EnemyBullet : MonoBehaviour
 {
     // Start is called before the first frame update
     private GameObject player;
     public Rigidbody2D rb;
-
     public float force;
     void Start()
     {
@@ -31,6 +30,7 @@ public class EnemyBullet : MonoBehaviour
         if(other.gameObject.CompareTag("Player")){
             Destroy(gameObject);
             SceneManager.LoadScene("EndScene");
+            // PlayerPrefs.SetString("finalScore",ScoreScript.scoreValue);
         }
     }
 }

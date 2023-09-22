@@ -19,7 +19,7 @@
             {
                 "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "buildOutputDirList",
-                "value": "{\"m_Value\":\"/Users/yheguo/Desktop/UnityGame/SpaceGamePrototype/WebGL Builds;/Users/adarshksingh/SpaceGame/WebGL Builds;;;;;;;;\"}"
+                "value": "{\"m_Value\":\"/Users/adarshksingh/SpaceGame/WebGL Builds;;;;;;;;;\"}"
             }
         ]
     }
